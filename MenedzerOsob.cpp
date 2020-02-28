@@ -7,9 +7,11 @@ string MenedzerOsob::wczytajLinie()
     return wejscie;
 }
 
-int MenedzerOsob::dodajOsobe()
+Osoba MenedzerOsob::dodajOsobe()
 {
+    Osoba osoba;
     string imie, nazwisko, numerTelefonu, email, adres;
+    int id;
     cout << "Podaj imie: ";
     imie = wczytajLinie();
     cout << "Podaj nazwisko: ";
@@ -20,13 +22,16 @@ int MenedzerOsob::dodajOsobe()
     email = wczytajLinie();
     cout << "Podaj adres: ";
     adres = wczytajLinie();
+    id = osoby.size()+1;
 
-    osoba.ustawId(iloscOsob+1);
+    osoba.ustawId(id);
     osoba.ustawImie(imie);
     osoba.ustawNazwisko(nazwisko);
     osoba.ustawNumerTelefonu(numerTelefonu);
     osoba.ustawEmail(email);
     osoba.ustawAdres(adres);
+
+    osoby.push_back(osoba);
 
     fstream plik;
     plik.open("KsiazkaAdresowa.txt",ios::out | ios::app);
@@ -47,5 +52,43 @@ int MenedzerOsob::dodajOsobe()
         system("pause");
     }
     cout << endl << "Osoba zostala dodana" << endl; system("pause");
-    return iloscOsob + 1;
+
+    cout << "Wielkosc wektora osoby: " << osoby.size() << endl;
+
+    return osoba;
 }
+
+void MenedzerOsob::wyswietlDaneAdresata(Osoba osoba)
+{
+ cout << endl << "Id:         " << osoba.pobierzId() << endl;
+    cout << "Imie:               " << osoba.pobierzImie() << endl;
+    cout << "Nazwisko:           " << osoba.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << osoba.pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << osoba.pobierzEmail() << endl;
+    cout << "Adres:              " << osoba.pobierzAdres() << endl;
+}
+
+
+void MenedzerOsob::wyswietlWszystkieOsoby()
+{
+    system("cls");
+
+    if (!osoby.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
+        {
+             wyswietlDaneAdresata(*itr);
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+
+
+
