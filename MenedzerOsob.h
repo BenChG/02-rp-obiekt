@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include "Osoba.h"
+#include <vector>
 
 using namespace std;
 
@@ -14,10 +15,15 @@ class MenedzerOsob
 {
 Osoba osoba;
 int iloscOsob = 0;
+vector <Osoba> osoby;
 
 public:
 string wczytajLinie();
-int dodajOsobe();
+Osoba dodajOsobe();
+
+void wyswietlWszystkieOsoby();
+void wyswietlDaneAdresata(Osoba osoba);
+
 };
 
 #endif
