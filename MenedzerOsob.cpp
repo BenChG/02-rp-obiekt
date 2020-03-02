@@ -60,7 +60,7 @@ Osoba MenedzerOsob::dodajOsobe()
 
 void MenedzerOsob::wyswietlDaneAdresata(Osoba osoba)
 {
- cout << endl << "Id:         " << osoba.pobierzId() << endl;
+    cout << "Id:         " << osoba.pobierzId() << endl;
     cout << "Imie:               " << osoba.pobierzImie() << endl;
     cout << "Nazwisko:           " << osoba.pobierzNazwisko() << endl;
     cout << "Numer telefonu:     " << osoba.pobierzNumerTelefonu() << endl;
@@ -90,5 +90,9 @@ void MenedzerOsob::wyswietlWszystkieOsoby()
     system("pause");
 }
 
-
+void MenedzerOsob::wczytajOsobyZPliku()
+{
+PlikiZOsobami plikiZOsobami;
+osoby=plikiZOsobami.wczytajOsobyZPliku();
+}
 
