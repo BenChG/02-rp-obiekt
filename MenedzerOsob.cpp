@@ -119,7 +119,6 @@ string MenedzerOsob::podajImie()
 
 void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
 {
-
   if (osoba.pobierzImie() == podaneImie)
     {
         cout << endl;
@@ -132,5 +131,37 @@ void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
     }
 }
 
+void MenedzerOsob::wyszukajPoNazwisku()
+{
+    Osoba osoba;
 
+    string podaneNazwisko = podajNazwisko();
 
+     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
+    {
+     wyswietlaniePoNazwisku(*itr, podaneNazwisko);
+    }
+    system("pause");
+}
+
+string MenedzerOsob::podajNazwisko()
+{
+    string nazwisko;
+    cout << "Podaj nazwisko osoby jaka mamy wyszukac: ";
+    nazwisko = wczytajLinie();
+    return nazwisko;
+}
+
+  void MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
+{
+  if (osoba.pobierzNazwisko() == podaneNazwisko)
+    {
+        cout << endl;
+        cout << "ID: " << osoba.pobierzId()<< endl;
+        cout << osoba.pobierzImie() << " " << osoba.pobierzNazwisko() << endl;
+        cout << "Telefon: " <<osoba.pobierzNumerTelefonu() << endl;
+        cout << "Email: " << osoba.pobierzEmail() << endl;
+        cout << "Adres: " << osoba.pobierzAdres() << endl;
+        cout << endl;
+    }
+}

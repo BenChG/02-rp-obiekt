@@ -23,13 +23,18 @@ public:
 string wczytajLinie();
 Osoba dodajOsobe();
 string podaneImie;
+string podaneNazwisko;
 
 void wyswietlWszystkieOsoby();
 void wyswietlDaneAdresata(Osoba osoba);
 void wczytajOsobyZPliku();
 void wyszukajPoImieniu();
-void wyswietlaniePoImieniu(Osoba osoba, string podaneImie);
 string podajImie();
+void wyswietlaniePoImieniu(Osoba osoba, string podaneImie);
+void wyszukajPoNazwisku();
+string podajNazwisko();
+void wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko);
+
 
 };
 
