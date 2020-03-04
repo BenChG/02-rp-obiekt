@@ -6,9 +6,10 @@ int main()
 MenedzerOsob menedzerOsob;
 
 menedzerOsob.wczytajOsobyZPliku();
-menedzerOsob.wyswietlWszystkieOsoby();
-menedzerOsob.dodajOsobe();
-menedzerOsob.wyswietlWszystkieOsoby();
+//menedzerOsob.wyswietlWszystkieOsoby();
+//menedzerOsob.dodajOsobe();
+//menedzerOsob.wyswietlWszystkieOsoby();
+menedzerOsob.wyszukajPoImieniu();
 
 return 0;
 }

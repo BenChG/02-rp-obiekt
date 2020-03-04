@@ -17,15 +17,19 @@ class MenedzerOsob
 Osoba osoba;
 int iloscOsob = 0;
 vector <Osoba> osoby;
-PlikiZOsobami plikiZOsobami;;
+PlikiZOsobami plikiZOsobami;
 
 public:
 string wczytajLinie();
 Osoba dodajOsobe();
+string podaneImie;
 
 void wyswietlWszystkieOsoby();
 void wyswietlDaneAdresata(Osoba osoba);
 void wczytajOsobyZPliku();
+void wyszukajPoImieniu();
+void wyswietlaniePoImieniu(Osoba osoba, string podaneImie);
+string podajImie();
 
 };
 

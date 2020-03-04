@@ -96,3 +96,41 @@ PlikiZOsobami plikiZOsobami;
 osoby=plikiZOsobami.wczytajOsobyZPliku();
 }
 
+void MenedzerOsob::wyszukajPoImieniu()
+{
+    Osoba osoba;
+
+    string podaneImie = podajImie();
+
+    for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
+    {
+     wyswietlaniePoImieniu(*itr, podaneImie);
+    }
+    system("pause");
+}
+
+string MenedzerOsob::podajImie()
+{
+    string imie;
+    cout << "Podaj imie osoby jaka mamy wyszukac: ";
+    imie = wczytajLinie();
+    return imie;
+}
+
+void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
+{
+
+  if (osoba.pobierzImie() == podaneImie)
+    {
+        cout << endl;
+        cout << "ID: " << osoba.pobierzId()<< endl;
+        cout << osoba.pobierzImie() << " " << osoba.pobierzNazwisko() << endl;
+        cout << "Telefon: " <<osoba.pobierzNumerTelefonu() << endl;
+        cout << "Email: " << osoba.pobierzEmail() << endl;
+        cout << "Adres: " << osoba.pobierzAdres() << endl;
+        cout << endl;
+    }
+}
+
+
+
