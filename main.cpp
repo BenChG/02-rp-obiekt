@@ -10,6 +10,7 @@ menedzerOsob.wczytajOsobyZPliku();
 //menedzerOsob.dodajOsobe();
 //menedzerOsob.wyswietlWszystkieOsoby();
 menedzerOsob.wyszukajPoImieniu();
+menedzerOsob.wyszukajPoNazwisku();
 
 return 0;
 }
