@@ -51,9 +51,11 @@ Osoba MenedzerOsob::dodajOsobe()
         cout << "Nie udalo sie otworzyc pliku i zapisac do niego danych." << endl;
         system("pause");
     }
-    cout << endl << "Osoba zostala dodana" << endl; system("pause");
+    cout << endl << "Osoba zostala dodana" << endl;
+    system("pause");
 
     cout << "Wielkosc wektora osoby: " << osoby.size() << endl;
+    system("pause");
 
     return osoba;
 }
@@ -79,7 +81,7 @@ void MenedzerOsob::wyswietlWszystkieOsoby()
         cout << "-----------------------------------------------" << endl;
         for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
         {
-             wyswietlDaneAdresata(*itr);
+            wyswietlDaneAdresata(*itr);
         }
         cout << endl;
     }
@@ -92,8 +94,8 @@ void MenedzerOsob::wyswietlWszystkieOsoby()
 
 void MenedzerOsob::wczytajOsobyZPliku()
 {
-PlikiZOsobami plikiZOsobami;
-osoby=plikiZOsobami.wczytajOsobyZPliku();
+    PlikiZOsobami plikiZOsobami;
+    osoby=plikiZOsobami.wczytajOsobyZPliku();
 }
 
 void MenedzerOsob::wyszukajPoImieniu()
@@ -104,7 +106,7 @@ void MenedzerOsob::wyszukajPoImieniu()
 
     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
     {
-     wyswietlaniePoImieniu(*itr, podaneImie);
+        wyswietlaniePoImieniu(*itr, podaneImie);
     }
     system("pause");
 }
@@ -119,7 +121,7 @@ string MenedzerOsob::podajImie()
 
 void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
 {
-  if (osoba.pobierzImie() == podaneImie)
+    if (osoba.pobierzImie() == podaneImie)
     {
         cout << endl;
         cout << "ID: " << osoba.pobierzId()<< endl;
@@ -137,9 +139,9 @@ void MenedzerOsob::wyszukajPoNazwisku()
 
     string podaneNazwisko = podajNazwisko();
 
-     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
+    for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
     {
-     wyswietlaniePoNazwisku(*itr, podaneNazwisko);
+        wyswietlaniePoNazwisku(*itr, podaneNazwisko);
     }
     system("pause");
 }
@@ -152,9 +154,9 @@ string MenedzerOsob::podajNazwisko()
     return nazwisko;
 }
 
-  void MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
+void MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
 {
-  if (osoba.pobierzNazwisko() == podaneNazwisko)
+    if (osoba.pobierzNazwisko() == podaneNazwisko)
     {
         cout << endl;
         cout << "ID: " << osoba.pobierzId()<< endl;

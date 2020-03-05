@@ -1,18 +1,18 @@
 #ifndef METODYPOMOCNICZE_H
 #define METODYPOMOCNICZE_H
-#include <iostream>
-#include <cstdlib>
+
 #include "MenedzerOsob.h"
 
 using namespace std;
 
 class MetodyPomocnicze
 {
-char wybor;
+    char wybor;
+
+    char wczytajZnak();
 
 public:
-char wybierzOpcjeZMenuGlownego();
-char wczytajZnak();
+    char wybierzOpcjeZMenuGlownego();
 };
 
 #endif

@@ -39,12 +39,12 @@ vector <Osoba> PlikiZOsobami::wczytajOsobyZPliku()
                 adres = linia;
                 break;
             }
-                osoba.ustawId(id);
-                osoba.ustawImie(imie);
-                osoba.ustawNazwisko(nazwisko);
-                osoba.ustawNumerTelefonu(numerTelefonu);
-                osoba.ustawEmail(email);
-                osoba.ustawAdres(adres);
+            osoba.ustawId(id);
+            osoba.ustawImie(imie);
+            osoba.ustawNazwisko(nazwisko);
+            osoba.ustawNumerTelefonu(numerTelefonu);
+            osoba.ustawEmail(email);
+            osoba.ustawAdres(adres);
 
             if (nr_linii >= 6)
             {
@@ -60,4 +60,3 @@ vector <Osoba> PlikiZOsobami::wczytajOsobyZPliku()
     }
     return osoby;
 }
-

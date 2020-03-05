@@ -7,25 +7,14 @@ using namespace std;
 
 class Osoba
 {
-   int id;
-   string imie;
-   string nazwisko;
-   string numerTelefonu;
-   string email;
-   string adres;
+    int id;
+    string imie;
+    string nazwisko;
+    string numerTelefonu;
+    string email;
+    string adres;
 
-    public:
-     Osoba (int=0, string imie="", string nazwisko="", string numerTelefonu="", string email="", string adres="")
-    {
-        this->id = id;
-        this->imie = imie;
-        this->nazwisko = nazwisko;
-        this->numerTelefonu = numerTelefonu;
-        this->email = email;
-        this->adres = adres;
-    }
-
-
+public:
 
     void ustawId(int noweId);
     void ustawImie (string noweNazwisko);
@@ -40,5 +29,16 @@ class Osoba
     string pobierzNumerTelefonu();
     string pobierzEmail();
     string pobierzAdres();
+
+    Osoba (int=0, string imie="", string nazwisko="", string numerTelefonu="", string email="", string adres="")
+    {
+        this->id = id;
+        this->imie = imie;
+        this->nazwisko = nazwisko;
+        this->numerTelefonu = numerTelefonu;
+        this->email = email;
+        this->adres = adres;
+    }
 };
+
 #endif
