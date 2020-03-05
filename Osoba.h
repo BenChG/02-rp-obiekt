@@ -15,7 +15,7 @@ class Osoba
    string adres;
 
     public:
-     OSoba (int=0, string imie="", string nazwisko="", string numerTelefonu="", string email="", string adres="")
+     Osoba (int=0, string imie="", string nazwisko="", string numerTelefonu="", string email="", string adres="")
     {
         this->id = id;
         this->imie = imie;
