@@ -1,6 +1,5 @@
 #include "Osoba.h"
 
-
 void Osoba::ustawId(int noweId)
 {
     if (noweId >= 0)
@@ -34,6 +33,7 @@ int Osoba::pobierzId()
 {
     return id;
 }
+
 string Osoba::pobierzImie()
 {
     return imie;
