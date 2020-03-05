@@ -37,3 +37,26 @@ char MetodyPomocnicze::wczytajZnak()
     }
     return znak;
 }
+
+string MetodyPomocnicze::wczytajLinie()
+{
+    string wejscie = "";
+    getline(cin, wejscie);
+    return wejscie;
+}
+
+string MetodyPomocnicze::podajImie()
+{
+    string imie;
+    cout << "Podaj imie osoby jaka mamy wyszukac: ";
+    imie = wczytajLinie();
+    return imie;
+}
+
+string MetodyPomocnicze::podajNazwisko()
+{
+    string nazwisko;
+    cout << "Podaj nazwisko osoby jaka mamy wyszukac: ";
+    nazwisko = wczytajLinie();
+    return nazwisko;
+}

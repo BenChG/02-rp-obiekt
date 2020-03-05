@@ -1,27 +1,21 @@
 #include "MenedzerOsob.h"
 
-string MenedzerOsob::wczytajLinie()
-{
-    string wejscie = "";
-    getline(cin, wejscie);
-    return wejscie;
-}
-
 Osoba MenedzerOsob::dodajOsobe()
 {
     Osoba osoba;
+    MetodyPomocnicze metodyPomocnicze;
     string imie, nazwisko, numerTelefonu, email, adres;
     int id;
     cout << "Podaj imie: ";
-    imie = wczytajLinie();
+    imie = metodyPomocnicze.wczytajLinie();
     cout << "Podaj nazwisko: ";
-    nazwisko = wczytajLinie();
+    nazwisko = metodyPomocnicze.wczytajLinie();
     cout << "Podaj numer telefonu: ";
-    numerTelefonu = wczytajLinie();
+    numerTelefonu = metodyPomocnicze.wczytajLinie();
     cout << "Podaj email: ";
-    email = wczytajLinie();
+    email = metodyPomocnicze.wczytajLinie();
     cout << "Podaj adres: ";
-    adres = wczytajLinie();
+    adres = metodyPomocnicze.wczytajLinie();
     id = osoby.size()+1;
 
     osoba.ustawId(id);
@@ -70,7 +64,6 @@ void MenedzerOsob::wyswietlDaneAdresata(Osoba osoba)
     cout << "Adres:              " << osoba.pobierzAdres() << endl;
 }
 
-
 void MenedzerOsob::wyswietlWszystkieOsoby()
 {
     system("cls");
@@ -92,31 +85,18 @@ void MenedzerOsob::wyswietlWszystkieOsoby()
     system("pause");
 }
 
-void MenedzerOsob::wczytajOsobyZPliku()
-{
-    PlikiZOsobami plikiZOsobami;
-    osoby=plikiZOsobami.wczytajOsobyZPliku();
-}
-
 void MenedzerOsob::wyszukajPoImieniu()
 {
     Osoba osoba;
+    MetodyPomocnicze metodyPomocnicze;
 
-    string podaneImie = podajImie();
+    string podaneImie = metodyPomocnicze.podajImie();
 
     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
     {
         wyswietlaniePoImieniu(*itr, podaneImie);
     }
     system("pause");
-}
-
-string MenedzerOsob::podajImie()
-{
-    string imie;
-    cout << "Podaj imie osoby jaka mamy wyszukac: ";
-    imie = wczytajLinie();
-    return imie;
 }
 
 void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
@@ -136,22 +116,15 @@ void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
 void MenedzerOsob::wyszukajPoNazwisku()
 {
     Osoba osoba;
+    MetodyPomocnicze metodyPomocnicze;
 
-    string podaneNazwisko = podajNazwisko();
+    string podaneNazwisko = metodyPomocnicze.podajNazwisko();
 
     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
     {
         wyswietlaniePoNazwisku(*itr, podaneNazwisko);
     }
     system("pause");
-}
-
-string MenedzerOsob::podajNazwisko()
-{
-    string nazwisko;
-    cout << "Podaj nazwisko osoby jaka mamy wyszukac: ";
-    nazwisko = wczytajLinie();
-    return nazwisko;
 }
 
 void MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
