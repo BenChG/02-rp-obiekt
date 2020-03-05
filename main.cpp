@@ -1,19 +1,18 @@
-#include "MenedzerOsob.h"
 #include "MetodyPomocnicze.h"
+#include "MenedzerOsob.h"
 
 using namespace std;
 
 int main()
 {
-    MenedzerOsob menedzerOsob;
     MetodyPomocnicze metodyPomocnicze;
+    MenedzerOsob menedzerOsob;
 
     char wybor;
     while (true)
     {
         wybor = metodyPomocnicze.wybierzOpcjeZMenuGlownego();
 
-        menedzerOsob.wczytajOsobyZPliku();
         switch (wybor)
         {
         case '1':

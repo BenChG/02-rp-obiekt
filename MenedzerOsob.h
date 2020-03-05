@@ -3,6 +3,7 @@
 
 #include "Osoba.h"
 #include "PlikiZOsobami.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -12,19 +13,19 @@ class MenedzerOsob
     PlikiZOsobami plikiZOsobami;
 
     vector <Osoba> osoby;
-    int iloscOsob = 0;
     string podaneImie;
     string podaneNazwisko;
 
-    string wczytajLinie();
     void wyswietlDaneAdresata(Osoba osoba);
-    string podajImie();
     void wyswietlaniePoImieniu(Osoba osoba, string podaneImie);
-    string podajNazwisko();
     void wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko);
 
 public:
-    void wczytajOsobyZPliku();
+    MenedzerOsob()
+    {
+     osoby=plikiZOsobami.wczytajOsobyZPliku();
+    };
+
     Osoba dodajOsobe();
     void wyszukajPoImieniu();
     void wyszukajPoNazwisku();

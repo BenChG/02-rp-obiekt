@@ -7,12 +7,13 @@ using namespace std;
 
 class MetodyPomocnicze
 {
-    char wybor;
-
     char wczytajZnak();
 
 public:
     char wybierzOpcjeZMenuGlownego();
+    string wczytajLinie();
+    string podajImie();
+    string podajNazwisko();
 };
 
 #endif
