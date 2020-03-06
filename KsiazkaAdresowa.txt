@@ -1,0 +1,24 @@
+1
+Adam
+Nowak
+423 123 987
+nowak@gmail.com
+ul.Radosna 3, Warszawa
+2
+Dominik
+Gora
+654 021 023
+gora@wp.pl
+ul.Listonoszy 50a, Zielona Gora
+3
+Anna
+Nowak
+569 032 123
+nowak.a@gmail.com
+ul.Radosna 3, Warszawa
+4
+Krzysztof
+Kowalski
+Brak
+Brak
+Brak

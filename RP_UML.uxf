@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>280</y>
+      <w>270</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>PlikiZOsobami
+--
+- osoby: vector &lt;Osoba&gt; 
+- linia: String
+- nr_linii: Integer
+- iloscOsob: Integer
+--
++ wczytajOsobyZPliku(): vector &lt;Osoba&gt; 
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>370</y>
+      <w>220</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
+- wejscie: String
+- znak: Char
+--
+- wczytajZnak(): Char
++ wczytajLinie(): String
++ string podajImie(): String
++ string podajNazwisko(): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>20</y>
+      <w>410</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>MenedzerOsob
+--
+- osoby: vector &lt;Osoba&gt; 
+- podaneImie: String
+- podaneNazwisko: String
+--
+MenedzerOsob()
+- wyswietlDaneAdresata (Osoba osoba): Void
+- wyswietlPoImieniu (Osoba osoba,string podaneImie): String
+- wyswietlPoNazwisku (Osoba osoba,string podaneImie): String
++ dodajOsobe(): Osoba
++ wyszukajPoImieniu(): Void
++ wyszukajPoNazwisku(): Void
++ wyswietlWszystkieOsoby(): Void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>270</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Main
+--
+wybor: Char
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>20</y>
+      <w>380</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>Osoba
+--
+- id: Integer
+- imie: String
+- nazwisko: String
+- numerTelefonu: String
+- email: String
+- adres: String
+--
++ ustawId(int noweId): Void
++ ustawImie (string noweNazwisko): Void
++ ustawNazwisko (string noweNazwisko): Void
++ ustawNumerTelefonu (string nowyNumerTelefonu): Void
++ ustawEmail(string nowyEmail): Void
++ ustawAdres (string nowyAdres): Void
++ pobierzId(): Integer
++ pobierzImie(): String
++ pobierzNazwisko(): String
++ pobierzNumerTelefonu(): String
++ pobierzEmail(): String
++ pobierzAdres(): String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
