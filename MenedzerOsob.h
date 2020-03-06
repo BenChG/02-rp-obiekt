@@ -17,8 +17,8 @@ class MenedzerOsob
     string podaneNazwisko;
 
     void wyswietlDaneAdresata(Osoba osoba);
-    void wyswietlaniePoImieniu(Osoba osoba, string podaneImie);
-    void wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko);
+    string wyswietlaniePoImieniu(Osoba osoba, string podaneImie);
+    string wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko);
 
 public:
     MenedzerOsob()
