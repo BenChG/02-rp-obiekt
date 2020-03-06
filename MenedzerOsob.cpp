@@ -89,17 +89,27 @@ void MenedzerOsob::wyszukajPoImieniu()
 {
     Osoba osoba;
     MetodyPomocnicze metodyPomocnicze;
+    string czyZnalezionoImie="NIE";
 
     string podaneImie = metodyPomocnicze.podajImie();
 
     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
     {
-        wyswietlaniePoImieniu(*itr, podaneImie);
+        if (wyswietlaniePoImieniu(*itr, podaneImie)=="TAK")
+        {
+            czyZnalezionoImie="TAK";
+        }
+
     }
-    system("pause");
+    if (czyZnalezionoImie!="TAK")
+    {
+        cout << "Brak osoby o podanym imieniu w ksiazce adresowej." << endl;
+        system("pause");
+    }
+    else system("pause");
 }
 
-void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
+string MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
 {
     if (osoba.pobierzImie() == podaneImie)
     {
@@ -110,6 +120,13 @@ void MenedzerOsob::wyswietlaniePoImieniu (Osoba osoba, string podaneImie)
         cout << "Email: " << osoba.pobierzEmail() << endl;
         cout << "Adres: " << osoba.pobierzAdres() << endl;
         cout << endl;
+        string czyZnalezionoImie = "TAK";
+        return czyZnalezionoImie;
+    }
+    else
+    {
+        string czyZnalezionoNazwisko = "NIE";
+        return czyZnalezionoNazwisko;
     }
 }
 
@@ -117,17 +134,26 @@ void MenedzerOsob::wyszukajPoNazwisku()
 {
     Osoba osoba;
     MetodyPomocnicze metodyPomocnicze;
+    string czyZnalezionoNazwisko = "NIE";
 
     string podaneNazwisko = metodyPomocnicze.podajNazwisko();
 
     for (vector <Osoba> :: iterator itr = osoby.begin(); itr != osoby.end(); itr++)
     {
-        wyswietlaniePoNazwisku(*itr, podaneNazwisko);
+        if (wyswietlaniePoNazwisku(*itr, podaneNazwisko)=="TAK")
+        {
+            czyZnalezionoNazwisko="TAK";
+        }
     }
-    system("pause");
+    if (czyZnalezionoNazwisko!="TAK")
+    {
+        cout << "Brak osoby o podanym nazwisku w ksiazce adresowej." << endl;
+        system("pause");
+    }
+    else system("pause");
 }
 
-void MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
+string MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
 {
     if (osoba.pobierzNazwisko() == podaneNazwisko)
     {
@@ -138,5 +164,12 @@ void MenedzerOsob::wyswietlaniePoNazwisku(Osoba osoba, string podaneNazwisko)
         cout << "Email: " << osoba.pobierzEmail() << endl;
         cout << "Adres: " << osoba.pobierzAdres() << endl;
         cout << endl;
+        string czyZnalezionoNazwisko = "TAK";
+        return czyZnalezionoNazwisko;
+    }
+    else
+    {
+        string czyZnalezionoNazwisko = "NIE";
+        return czyZnalezionoNazwisko;
     }
 }
